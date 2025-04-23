@@ -1,6 +1,5 @@
  "use client"
-import EventScheduler from "./component/ EventScheduler";
-import './styles/global.scss'
+import EventScheduler from './component/EventScheduler';
 
 export default function Home() {
   return (
