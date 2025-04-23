@@ -17,7 +17,7 @@ type Event = {
        
       </div>
 
-      <div className="text-xl font-semibold">    <button onClick={() => onNavigate('PREV')} className=" px-3 py-1 text-2xl align-middle rounded">
+      <div className="text-base font-semibold">    <button onClick={() => onNavigate('PREV')} className=" px-3 py-1 text-2xl align-middle rounded">
           {"<"}
         </button>
         {label}

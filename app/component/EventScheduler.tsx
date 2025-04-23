@@ -172,29 +172,28 @@ export default function EventScheduler() {
   return (
     <div>
       <div className="flex place-content-between py-4 bg-gray-200 rounded-sm px-2 "> 
-          <div className="text-2xl font-bold font-[Poppins]  align-middle">Event Scheduler</div>
+          <div className="text-base font-bold font-[Poppins]  align-middle">Event Scheduler</div>
         <div>
-          <Button className="font-[Poppins] text-xl" onClick={openNewEventForm}>  <span ><CalendarTodayIcon /></span> <span className="align-middle pl-2">New Event</span> </Button>
+          <Button className="font-[Poppins] text-base" onClick={openNewEventForm}>  <span ><CalendarTodayIcon /></span> <span className="align-middle pl-2">New Event</span> </Button>
         </div></div>
 
       <div className="grid grid-cols-6 gap-4 pt-4">
         <div className="col-span-1 bg-gray-100 rounded ">
-          <div className="p-2 text-xl font-bold font-[Poppins]">
+          <div className="p-2 text-base font-bold font-[Poppins]">
             To Drag the event
           </div>
           <div className="p-4">
             {drag?.map((value, i) => (
               <div
-                className="font-[Poppins] align-middle  text-base p-2 mb-2 bg-[#3174ad] text-white shadow rounded cursor-move"
+                className="font-[Poppins] align-middle  text-xs p-2 mb-2 bg-[#3174ad] text-white shadow rounded cursor-move"
                 draggable
                 onDragStart={() => setDraggedEvent(value)}
                 key={i}
               >
-                <div className="font-poppins"> <span><GroupsIcon fontSize="small" /></span> {value.title}</div>
-                <div> <span> <LocationOnIcon fontSize="small" /></span> {value.address}</div>
-                <div className="flex align-middle"><span className="pr-1 "><AccessTimeIcon fontSize="small" /></span> {moment(value.start).format("h:mm A")}
+                <div className="font-poppins"> <span><GroupsIcon sx={{fontSize:14}}  /></span> {value.title}</div>
+                <div> <span> <LocationOnIcon  sx={{fontSize:14}}  /></span> {value.address}</div>
+                <div className="flex align-middle"><span className="pr-1 "><AccessTimeIcon  sx={{fontSize:14}} /></span> {moment(value.start).format("h:mm A")}
                   {" to "}  {moment(value.end).format("h:mm A")}</div>
-
               </div>
             ))}
           </div>
@@ -202,7 +201,7 @@ export default function EventScheduler() {
         </div>
         <div className="col-span-5">
           {/* Calendar */}
-          <DnDCalendar className="font-[Poppins] text-xl"
+          <DnDCalendar className="font-[Poppins] text-base"
             components={{
               toolbar: CustomToolbar,
             }}
@@ -248,7 +247,7 @@ export default function EventScheduler() {
           {modalOpen ? (
             <>
               <div className="flex justify-between font-bold ">
-                <div className="align-middle  text-2xl">   {selectedEvent ? "Update the event?" : "Add New Event?"}</div>
+                <div className="align-middle  text-base">   {selectedEvent ? "Update the event?" : "Add New Event?"}</div>
               
                 <Button
                   variant="discard"
